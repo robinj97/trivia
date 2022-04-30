@@ -1,0 +1,20 @@
+{
+    "Questions": [
+        {
+            "How long did Portgas D Rouge's pregnancy last?": {
+                "12 months": false,
+                "9 months": false,
+                "15 months": false,
+                "20 months": true
+            }
+        },
+        {
+            "Who wrote about the fifth emperror?": {
+                "Morgans in Whole Cake Island Arc": true,
+                "Luffy": false,
+                "Zoro": false,
+                "Nami": false
+            }
+        }
+    ]
+}
