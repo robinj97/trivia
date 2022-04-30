@@ -1,25 +1,28 @@
-
 <template>
-  <h1>{{ questionText }}</h1>
-  <BaseButton v-for="(question, answer) in questionsList" />
+  <div>
+    <div v-for="question in setupQuestions" :key="question.prompt">
+      <h2>{{ question.prompt }}</h2>
+      <BaseButton
+        v-for="answer in question.answers"
+        :key="answer.answerText"
+        :buttonText="answer.answerText"
+        :buttonValue="answer.value"
+      />
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import BaseButton from "./BaseButton.vue";
-import { Questions } from "src/quiz.json";
+import { Questions } from "../quiz.json";
 export default defineComponent({
   components: { BaseButton },
-  props: {
-    questionText: {
-      type: String,
-      required: true,
-    },
-  },
-  setup(props) {
-    const questionsList = Questions;
-    const questionTextProp = props.questionText;
-    return { questionTextProp, questionsList };
+  setup() {
+    const setupQuestions = Questions;
+    return {
+      setupQuestions,
+    };
   },
 });
 </script>
