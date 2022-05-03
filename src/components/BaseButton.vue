@@ -5,8 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
+export default {
   props: {
     buttonText: {
       type: String,
@@ -17,7 +16,7 @@ export default defineComponent({
       required: true,
     },
   },
-});
+};
 </script>
 <style>
 .answer-btn {
