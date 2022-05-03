@@ -20,6 +20,27 @@
                     "value": false
                 }
             ]
+        },
+        {
+            "prompt": "Who of the eleven Supernovas ate a Zoan Devil Fruit?",
+            "answers": [
+                {
+                    "answerText": "Trafalgar D Law",
+                    "value": false
+                },
+                {
+                    "answerText": "Eustass Kid",
+                    "value": false
+                },
+                {
+                    "answerText": "X Drake",
+                    "value": true
+                },
+                {
+                    "answerText": "Basil Hawkins",
+                    "value": false
+                }
+            ]
         }
     ]
 }

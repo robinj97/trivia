@@ -3,7 +3,7 @@
     <div v-for="question in setupQuestions" :key="question.prompt">
       <h2>{{ question.prompt }}</h2>
       <p>{{ points }}</p>
-      <div id="answerBlock">
+      <div :id="question.prompt">
         <BaseButton
           v-for="answer in question.answers"
           :key="answer.answerText"
@@ -35,7 +35,9 @@ export default {
         document.getElementById(event.buttonText).style.background = "#FF0000";
       }
       if (event || !event) {
-        document.getElementById("answerBlock").style.pointerEvents = "none";
+        let parentDivName = document.getElementById(event.buttonText)
+          ?.parentElement?.id;
+        document.getElementById(parentDivName).style.pointerEvents = "none";
       }
     }
     return {
