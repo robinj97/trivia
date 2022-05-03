@@ -10,6 +10,7 @@
           :buttonText="answer.answerText"
           :buttonValue="answer.value"
           @pressed="addPoints($event)"
+          :id="answer.answerText"
         />
       </div>
     </div>
@@ -25,9 +26,13 @@ export default {
   setup() {
     const setupQuestions = Questions;
     let points = ref(0);
-    function addPoints(event: boolean) {
-      if (event) {
+    function addPoints(event) {
+      if (event.buttonValue) {
         points.value++;
+        document.getElementById(event.buttonText).style.background = "#4CAF50";
+      }
+      if (!event.buttonValue) {
+        document.getElementById(event.buttonText).style.background = "#FF0000";
       }
       if (event || !event) {
         document.getElementById("answerBlock").style.pointerEvents = "none";
